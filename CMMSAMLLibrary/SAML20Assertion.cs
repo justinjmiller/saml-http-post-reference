@@ -87,7 +87,7 @@ namespace CoverMyMeds.SAML.Library
             XmlNamespaceManager ns = new XmlNamespaceManager(xmlResponse.NameTable);
             ns.AddNamespace("saml", "urn:oasis:names:tc:SAML:2.0:assertion");
 
-            CertificateUtility.AppendSignatureToXMLDocument(ref xmlResponse, "#" + ((AssertionType)Response.Items[0]).ID, SigningCert);
+            CertificateUtility.AppendSignatureToXMLDocument(ref xmlResponse,  ((AssertionType)Response.Items[0]).ID, SigningCert);
 
             return xmlResponse;
         }
